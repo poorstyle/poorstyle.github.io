@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>cxScroll 间歇式无缝滚动 &raquo; 在线演示 - 前端开发仓库</title>
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+<style type="text/css">
+	.rotate-bar{ 
+		width: 240px; 
+		height: 50px; 
+		background: #333; 
+		border-radius: 5px;
+		position: fixed;
+		bottom: 50px;
+		left: 50%;
+		margin-left: -120px;
+		z-index: 9999;
+	}
+	.rotate-bar span{
+		opacity: 0.8;
+		width: 33%; 
+		display: inline-block; 
+		text-align: center;
+		line-height: 50px;
+		height: 50px;
+		cursor: pointer;
+		font-size: 16px;
+		color: #fff;
+		background: url(img/rotate-icon.png) 0 -429px no-repeat; 
+	}
+
+	.rotate01{
+		border-right: 1px solid #666;
+		
+	}
+	.rotate-bar .rotate02{
+		border-right: 1px solid #666;
+
+		
+	}
+	.rotate-bar .rotate02{
+		background-position: 0 -509px;
+		
+	}
+	.rotate-bar .rotate03{
+		background-position: 0 -597px;
+		
+	}
+	.fancybox-nav{
+		width: 180px;
+		height: 200px;
+		display: block;
+		background: url(img/rotate-icon.png) 0 35px no-repeat;
+		top: 50%;
+		margin-top: -100px;
+	}
+	.fancybox-next{ background-position: 86px -194px; }
+	.fancybox-nav span{
+		display: none;
+	}
+	.fancybox-nav span{
+		visibility: visible;
+	}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<h2>横向滚动 right</h2>
+	<div id="pic_list_1" class="scroll_horizontal">
+		<div class="box">
+			<ul class="list">
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group1"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group1"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group1"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group1"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group1"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group1"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group1"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group1"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group1"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group1"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group1"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group1"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group1"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group1"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group1"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group1"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group1"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group1"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group1"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group1"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group1"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group1"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group1"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group1"><img src="img/temp_pic_3.jpg"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="pic_list_2" class="scroll_horizontal">
+		<div class="box">
+			<ul class="list">
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group2"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group2"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group2"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group2"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group2"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group2"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group2"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group2"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group2"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group2"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group2"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group2"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/1.jpg" rel="group2"><img src="img/temp_pic_1.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/2.jpg" rel="group2"><img src="img/temp_pic_2.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+				<li><a class="grouped_elements" href="img/3.jpg" rel="group2"><img src="img/temp_pic_3.jpg"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- <div id="pic_list_1" class="scroll_horizontal"><a class="next"></a><a class="prev"></a><div class="box"><ul class="list"><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/e74c11a75081479e9c5106b9c5c6d9e4.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/e74c11a75081479e9c5106b9c5c6d9e4.png"><p class="scroll-pic-tit"><span>11111</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/b74ee83bea514a73abbdd1710a20a74c.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/b74ee83bea514a73abbdd1710a20a74c.png"><p class="scroll-pic-tit"><span>222222</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/20e0926594ad4ea9ac4e0b675eaf1ff8.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/20e0926594ad4ea9ac4e0b675eaf1ff8.png"><p class="scroll-pic-tit"><span>3</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/65d7e4fa786c4c4daaace6bf5b6ea6fe.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/65d7e4fa786c4c4daaace6bf5b6ea6fe.png"><p class="scroll-pic-tit"><span>4</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/65f8380cdfb94cb591f2d3bc22cdea4f.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/65f8380cdfb94cb591f2d3bc22cdea4f.png"><p class="scroll-pic-tit"><span>5</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/530034db15854de3bc7e7c082f8d0564.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/530034db15854de3bc7e7c082f8d0564.png"><p class="scroll-pic-tit"><span>QQ截图20160325142353</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/1a0081b3a04c43fd99bef93513928b7b.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/1a0081b3a04c43fd99bef93513928b7b.png"><p class="scroll-pic-tit"><span>6</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/fdd335987d71454eb26bf7f1b4fb3e70.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/fdd335987d71454eb26bf7f1b4fb3e70.png"><p class="scroll-pic-tit"><span>7</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/b72e66a1c6384d4899b683b2d7df0629.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/b72e66a1c6384d4899b683b2d7df0629.png"><p class="scroll-pic-tit"><span>8</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/c6057eb59fcf4ee2a17ff76f7aad94d5.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/c6057eb59fcf4ee2a17ff76f7aad94d5.png"><p class="scroll-pic-tit"><span>9</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/9437e6eebdbd45678a060f2243b9fc83.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/9437e6eebdbd45678a060f2243b9fc83.png"><p class="scroll-pic-tit"><span>10</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/02c9752e7bbe48d3aa280258082ad135.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/02c9752e7bbe48d3aa280258082ad135.png"><p class="scroll-pic-tit"><span>66</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/e74c11a75081479e9c5106b9c5c6d9e4.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/e74c11a75081479e9c5106b9c5c6d9e4.png"><p class="scroll-pic-tit"><span>11111</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/b74ee83bea514a73abbdd1710a20a74c.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/b74ee83bea514a73abbdd1710a20a74c.png"><p class="scroll-pic-tit"><span>222222</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/20e0926594ad4ea9ac4e0b675eaf1ff8.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/20e0926594ad4ea9ac4e0b675eaf1ff8.png"><p class="scroll-pic-tit"><span>3</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/65d7e4fa786c4c4daaace6bf5b6ea6fe.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/65d7e4fa786c4c4daaace6bf5b6ea6fe.png"><p class="scroll-pic-tit"><span>4</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/65f8380cdfb94cb591f2d3bc22cdea4f.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/65f8380cdfb94cb591f2d3bc22cdea4f.png"><p class="scroll-pic-tit"><span>5</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/530034db15854de3bc7e7c082f8d0564.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/530034db15854de3bc7e7c082f8d0564.png"><p class="scroll-pic-tit"><span>QQ截图20160325142353</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/1a0081b3a04c43fd99bef93513928b7b.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/1a0081b3a04c43fd99bef93513928b7b.png"><p class="scroll-pic-tit"><span>6</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/fdd335987d71454eb26bf7f1b4fb3e70.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/fdd335987d71454eb26bf7f1b4fb3e70.png"><p class="scroll-pic-tit"><span>7</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/b72e66a1c6384d4899b683b2d7df0629.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/b72e66a1c6384d4899b683b2d7df0629.png"><p class="scroll-pic-tit"><span>8</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/c6057eb59fcf4ee2a17ff76f7aad94d5.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/c6057eb59fcf4ee2a17ff76f7aad94d5.png"><p class="scroll-pic-tit"><span>9</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/9437e6eebdbd45678a060f2243b9fc83.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/9437e6eebdbd45678a060f2243b9fc83.png"><p class="scroll-pic-tit"><span>10</span></p><div class="scroll-pic-mask"></div></a></li><li><a class="grouped_elements" href="http://pictest.tyjr.com/zichan/02c9752e7bbe48d3aa280258082ad135.png" rel="group1"><img src="http://pictest.tyjr.com/zichan/02c9752e7bbe48d3aa280258082ad135.png"><p class="scroll-pic-tit"><span>66</span></p><div class="scroll-pic-mask"></div></a></li></ul></div> </div> -->
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.cxscroll.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+<script>
+$("a.grouped_elements").fancybox({
+	rotate:true,
+	closeBtn:false
+});
+$("#pic_list_1,#pic_list_2").cxScroll({
+	auto:false
+});
+//var _deg=0;
+// $('body').on('click','.rotate01',function(){
+// 	var _rotate=$('.fancybox-wrap').css('transform');
+// 	$('.fancybox-wrap').css('transform','rotate('+_deg+'deg)');
+// 	return false;
+// })
+
+</script>
+</body>
+</html>
