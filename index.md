@@ -29,7 +29,7 @@ tagline: 的博客
             <div class="row">
               <article class="6u 12u$(xsmall) work-item">
                 <a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-                <h3>www.ilongterm.com</h3>
+                <h3><a href="www.ilongterm.com">www.ilongterm.com</a></h3>
                 <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
               </article>
               <article class="6u$ 12u$(xsmall) work-item">
